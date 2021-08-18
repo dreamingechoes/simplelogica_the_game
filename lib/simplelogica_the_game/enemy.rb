@@ -1,6 +1,5 @@
 module SimplelogicaTheGame
   class Enemy
-
     include Sprite
 
     def initialize(num)
@@ -31,6 +30,5 @@ module SimplelogicaTheGame
     def points
       @delta * 10
     end
-    
   end
 end

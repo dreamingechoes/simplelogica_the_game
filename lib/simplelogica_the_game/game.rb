@@ -2,7 +2,6 @@ require 'gosu'
 
 module SimplelogicaTheGame
   class Game < Gosu::Window
-
     attr_reader :images, :audio, :fx, :delta, :enemies, :bullets, :ship
     attr_accessor :score
 
@@ -66,7 +65,7 @@ module SimplelogicaTheGame
 
     def draw
       @images[@screen].draw(0, 0, 2)
-      @font.draw("esc to exit", 20, 10, 3, 1, 1, Gosu::Color::WHITE)
+      @font.draw_text("esc to exit", 20, 10, 3, 1, 1, Gosu::Color::WHITE)
 
       if @screen == :background_stage
         @ship.draw
@@ -80,10 +79,10 @@ module SimplelogicaTheGame
         end
         @images[:space].draw(0, @space_y, 0)
 
-        @font.draw("SCORE", 134, 902, 3, 2, 1, Gosu::Color::WHITE)
-        @font.draw("#{@score}".rjust(5, '0'), 136, 936, 3, 2, 1, Gosu::Color::WHITE)
+        @font.draw_text("SCORE", 134, 892, 3, 2, 1, Gosu::Color::WHITE)
+        @font.draw_text("#{@score}".rjust(5, '0'), 136, 926, 3, 2, 1, Gosu::Color::WHITE)
       elsif @screen == :background_game_over
-        @font.draw("SCORE: #{@score.to_s.rjust(5, '0')}", 252, 580, 3, 2, 1, Gosu::Color::WHITE)
+        @font.draw_text("SCORE: #{@score.to_s.rjust(5, '0')}", 252, 580, 3, 2, 1, Gosu::Color::WHITE)
       end
     end
 
@@ -122,11 +121,11 @@ module SimplelogicaTheGame
       end
 
       AUDIO_ASSETS.each do |key, value|
-        @audio[key] = Gosu::Song.new(self, value)
+        @audio[key] = Gosu::Song.new(value)
       end
 
       FX_ASSETS.each do |key, value|
-        @fx[key] = Gosu::Sample.new(self, value)
+        @fx[key] = Gosu::Sample.new(value)
       end
 
       @font = Gosu::Font.new(self, FONT_ASSETS[:font], 40)
@@ -167,6 +166,5 @@ module SimplelogicaTheGame
       @screen = :background_game_over
       @audio[:game_over_music].play(true)
     end
-
   end
 end

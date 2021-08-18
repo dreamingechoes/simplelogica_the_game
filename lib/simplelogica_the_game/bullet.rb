@@ -1,7 +1,7 @@
 module SimplelogicaTheGame
   class Bullet
-
     include Sprite
+
     SPEED = 400 # pixels / second
 
     def initialize(x, y)
@@ -31,6 +31,5 @@ module SimplelogicaTheGame
       # destroy the laser when out of the screen
       self.kill! if @y < -15
     end
-    
   end
 end

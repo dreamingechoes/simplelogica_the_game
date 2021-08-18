@@ -1,6 +1,5 @@
 module SimplelogicaTheGame
   class Ship
-
     include Sprite
     SPEED = 350 # pixels / second
 
@@ -23,6 +22,5 @@ module SimplelogicaTheGame
       @x = [[@x, $game.width-80].min, 80].max
       @y = [[@y, $game.height-260].min, 80].max
     end
-
   end
 end

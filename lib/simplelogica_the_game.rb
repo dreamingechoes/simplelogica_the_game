@@ -6,7 +6,6 @@ require "simplelogica_the_game/enemy"
 require "simplelogica_the_game/game"
 
 module SimplelogicaTheGame
-
   def self.init
     begin
       $game = SimplelogicaTheGame::Game.new
@@ -15,7 +14,4 @@ module SimplelogicaTheGame
       puts "\r Something goes wrong! :("
     end
   end
-  
 end
-
-SimplelogicaTheGame.init

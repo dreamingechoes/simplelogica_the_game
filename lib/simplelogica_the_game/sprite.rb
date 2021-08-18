@@ -1,6 +1,5 @@
 module SimplelogicaTheGame
   module Sprite
-
     attr_accessor :x, :y, :z, :angle, :image, :radius
 
     def initialize_sprite
@@ -33,6 +32,5 @@ module SimplelogicaTheGame
     def draw
       @image.draw_rot(@x, @y, @z, @angle) unless @image.nil?
     end
-    
   end
 end
